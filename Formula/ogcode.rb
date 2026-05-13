@@ -5,21 +5,21 @@
 class Ogcode < Formula
   desc "Agentic coding assistant with web UI"
   homepage "https://github.com/prasenjeet-symon/ogcode"
-  version "0.2.4"
+  version "0.2.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.4/ogcode_0.2.4_darwin_x86_64.tar.gz"
-      sha256 "26112d372cf86f4b63476a81e96b583ff643cf2ba2c184fb0e3e10c4b0e48964"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.5/ogcode_0.2.5_darwin_x86_64.tar.gz"
+      sha256 "3d475b5a9fb2a7a006309c47851d385274d0dcffadc0c08618816b5e28d5ad02"
 
       define_method(:install) do
         bin.install "ogcode"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.4/ogcode_0.2.4_darwin_arm64.tar.gz"
-      sha256 "9cb6974a3ca29f8d852ff47a61fe3acf6df2e14248d49c6d561bdd83a1b46d47"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.5/ogcode_0.2.5_darwin_arm64.tar.gz"
+      sha256 "3aa13731174a48c01f34f1f624e9700016b360dea20a9d49b65e4de9f4ee41f4"
 
       define_method(:install) do
         bin.install "ogcode"
@@ -29,15 +29,15 @@ class Ogcode < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.4/ogcode_0.2.4_linux_x86_64.tar.gz"
-      sha256 "64a67d8ac0e5c47d55716533bd0dcfe10a68b6db5678272eb493792f08f1b599"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.5/ogcode_0.2.5_linux_x86_64.tar.gz"
+      sha256 "100deaf14c5b3418820ca16d7e9de096dded41745f6ba73494285de1d5d26939"
       define_method(:install) do
         bin.install "ogcode"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.4/ogcode_0.2.4_linux_arm64.tar.gz"
-      sha256 "b11a4d59c1ac3a8287db84c2d92afe3db2efd3ab19dca170fc72b92dc33d23ea"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.2.5/ogcode_0.2.5_linux_arm64.tar.gz"
+      sha256 "8b7f33f42b0f07f4aea3c1bf26d6dffd5a77c975274ed67ba501d0c96ffe8216"
       define_method(:install) do
         bin.install "ogcode"
       end
