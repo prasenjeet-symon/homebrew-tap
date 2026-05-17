@@ -11,7 +11,7 @@ class Ogcode < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.3.0/ogcode_0.3.0_darwin_x86_64.tar.gz"
-      sha256 "d06023b27d64e3b9c38931979461d93cdb318906804132b4f0b891b697f6d5b2"
+      sha256 "13d9c6114df31ac0cd55efe7b2c67a64ff5744b97347f8011025093d40282cd7"
 
       define_method(:install) do
         bin.install "ogcode"
@@ -19,7 +19,7 @@ class Ogcode < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.3.0/ogcode_0.3.0_darwin_arm64.tar.gz"
-      sha256 "a3b299a3a02922e55f7be65bbfca05823ed3fbefee129bcfbcc78c1e95b3ee1b"
+      sha256 "7a9237239f5a222cae71c567642baab7d18e38984d628b497ce70755715d66e2"
 
       define_method(:install) do
         bin.install "ogcode"
@@ -30,14 +30,14 @@ class Ogcode < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.3.0/ogcode_0.3.0_linux_x86_64.tar.gz"
-      sha256 "1cfd038c0fa6e8a0fed4f9f3f053a58dd620d39363a1757423056444a04a6fca"
+      sha256 "afb3bddaaa9a31bf654c31bbcf6e9afab1c32569d624fb7ac058b7e7201f56ff"
       define_method(:install) do
         bin.install "ogcode"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.3.0/ogcode_0.3.0_linux_arm64.tar.gz"
-      sha256 "c5392e29244cb0fcf4cac4871f2db112d66e6441d47f3fdc01b513126d409e7e"
+      sha256 "fff5345b483265ab68af6a61567d1f4b5fac62f9b034953ad4ccf93e5ae8e283"
       define_method(:install) do
         bin.install "ogcode"
       end
