@@ -5,13 +5,13 @@
 class Ogcode < Formula
   desc "Agentic coding assistant with web UI"
   homepage "https://github.com/prasenjeet-symon/ogcode"
-  version "0.19.2"
+  version "0.19.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.2/ogcode_0.19.2_darwin_x86_64.tar.gz"
-      sha256 "3f65a2ca4e1555a2acc7dcc3715327eeca0d14feb05af8b4df719e1b36cee645"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.3/ogcode_0.19.3_darwin_x86_64.tar.gz"
+      sha256 "d7072cd1ef24682a4abf24e7685ad06edad5af8cf74217e33997d212cbec40fb"
 
       define_method(:install) do
         bin.install "ogcode"
@@ -21,8 +21,8 @@ class Ogcode < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.2/ogcode_0.19.2_darwin_arm64.tar.gz"
-      sha256 "c6541ff818696c63fc6007b1b84fdbdbce0468af6a8a2fc0087bfbe5ff71aa26"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.3/ogcode_0.19.3_darwin_arm64.tar.gz"
+      sha256 "220caebfe7d2fffc4638f1a3e87e76637074248ae2f314fd410f51946888bf0c"
 
       define_method(:install) do
         bin.install "ogcode"
@@ -35,8 +35,8 @@ class Ogcode < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.2/ogcode_0.19.2_linux_x86_64.tar.gz"
-      sha256 "283e1d682d4ce7e6193a6e8b765425bba17b4c618ca4fd73b2a24e749e3022ab"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.3/ogcode_0.19.3_linux_x86_64.tar.gz"
+      sha256 "96c68cffcb0ea50862661befe102d89a7eab626b7f2f933b8e3682ab2b73a234"
       define_method(:install) do
         bin.install "ogcode"
         (share/"ogcode/search-bridge").mkpath
@@ -45,8 +45,8 @@ class Ogcode < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.2/ogcode_0.19.2_linux_arm64.tar.gz"
-      sha256 "739ab5e421cbd58f23c2a71b8e309594504eb2a6df6614564a62821c818030ff"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.19.3/ogcode_0.19.3_linux_arm64.tar.gz"
+      sha256 "bb63cc95673163cd795bdf57eb5fbd9dae5bee629d90332a2d550373e6afb2d1"
       define_method(:install) do
         bin.install "ogcode"
         (share/"ogcode/search-bridge").mkpath
