@@ -5,63 +5,42 @@
 class Ogcode < Formula
   desc "Agentic coding assistant with web UI"
   homepage "https://github.com/prasenjeet-symon/ogcode"
-  version "0.28.0"
+  version "0.29.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.28.0/ogcode_0.28.0_darwin_x86_64.tar.gz"
-      sha256 "cab4bd1a7f118e527a2ed932961c409f056102c93db6f9c3268d559209a4ee8f"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.29.0/ogcode_0.29.0_darwin_x86_64.tar.gz"
+      sha256 "59395bf4deac9f9f6b4b396997b4715cf7677de09ea278fefbb22846b2c0ebb2"
 
       define_method(:install) do
         bin.install "ogcode"
-        (share/"ogcode/search-bridge").mkpath
-        (share/"ogcode/search-bridge").install "search-bridge/server.js"
-        (share/"ogcode/search-bridge").install "search-bridge/package.json"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.28.0/ogcode_0.28.0_darwin_arm64.tar.gz"
-      sha256 "17e724a3cb670aa7bd6da89c4237791ed5654e3c0f0f50c1ba9b6246417300a1"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.29.0/ogcode_0.29.0_darwin_arm64.tar.gz"
+      sha256 "354cab527f5b2cb17ee29000ae0f26072436dd7c27a376721ec800ecdbcc02fa"
 
       define_method(:install) do
         bin.install "ogcode"
-        (share/"ogcode/search-bridge").mkpath
-        (share/"ogcode/search-bridge").install "search-bridge/server.js"
-        (share/"ogcode/search-bridge").install "search-bridge/package.json"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.28.0/ogcode_0.28.0_linux_x86_64.tar.gz"
-      sha256 "df0818afb0f52cf4bb0d6989bf7c1fa5a50d8b67f7d8aeb9d1e0078e219e5569"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.29.0/ogcode_0.29.0_linux_x86_64.tar.gz"
+      sha256 "f9a91263d8bdbfaad9db2c63d26540d3ee5352d6ac7be422ac1d6162c5da5cc0"
       define_method(:install) do
         bin.install "ogcode"
-        (share/"ogcode/search-bridge").mkpath
-        (share/"ogcode/search-bridge").install "search-bridge/server.js"
-        (share/"ogcode/search-bridge").install "search-bridge/package.json"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.28.0/ogcode_0.28.0_linux_arm64.tar.gz"
-      sha256 "8e11af11113e25d6f327dd52234c69977003f8f26b33b5b56b3ed0d06dc824ae"
+      url "https://github.com/prasenjeet-symon/ogcode/releases/download/v0.29.0/ogcode_0.29.0_linux_arm64.tar.gz"
+      sha256 "ba996f6727d30349b791e50a2276c7a81b217b79fea49a10a597db6d9d6fc179"
       define_method(:install) do
         bin.install "ogcode"
-        (share/"ogcode/search-bridge").mkpath
-        (share/"ogcode/search-bridge").install "search-bridge/server.js"
-        (share/"ogcode/search-bridge").install "search-bridge/package.json"
       end
-    end
-  end
-
-  def post_install
-    bridge_dir = share/"ogcode/search-bridge"
-    if which("node") && which("npm")
-      system "npm", "install", "--legacy-peer-deps", "--prefix", bridge_dir.to_s, "--silent"
-      system "npx", "playwright", "install", "chromium"
-      ohai "Web search agent ready. Enable it in ogcode Settings → General."
     end
   end
 
@@ -69,12 +48,7 @@ class Ogcode < Formula
     <<~EOS
       ogcode installed! Run `ogcode --help` to get started.
 
-      Web Search Agent (optional):
-        Requires Node.js. To enable after install:
-          cd #{HOMEBREW_PREFIX}/share/ogcode/search-bridge
-          npm install
-          npx playwright install chromium
-        Then enable search in ogcode Settings → General.
+      Web search is built in and enabled by default — nothing else to install.
     EOS
   end
 
